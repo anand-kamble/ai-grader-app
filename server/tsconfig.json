@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+      "target": "es6",
+      "module": "commonjs",
+      "outDir": "./bin",
+      "strict": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "paths": {
+        "@shared/*": ["../shared/*"]
+      }
+    },
+    
+    "include": ["src/**/*.ts"],
+    "exclude": ["node_modules"]
+}
