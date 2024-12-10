@@ -1,0 +1,12 @@
+{
+  "name": "shared-types",
+  "version": "1.0.0",
+  "description": "types which will be used across backend and frontend",
+  "main": "dist/index.js",
+  "author": "anand-kamble",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "typescript": "^5.7.2"
+  }
+}
