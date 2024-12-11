@@ -19,5 +19,11 @@ export declare enum UserError {
     InvalidPassword = "Invalid password",
     UnknownError = "Unknown error"
 }
-export interface UserLogin {
+export interface UserLoginResponseSuccess {
+    message: string;
+    user: User;
 }
+export interface UserLoginResponseError {
+    error: UserError;
+}
+export type UserLoginResponse = UserLoginResponseSuccess | UserLoginResponseError;

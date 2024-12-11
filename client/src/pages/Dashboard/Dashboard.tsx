@@ -9,7 +9,7 @@ const Dashboard = () => {
     const dispatch = useDispatch<AppDispatch>();
     const theme = useContext(ThemeContext);
 
-    const { loading } = useSelector((state: RootState) => state.auth)
+    const { loading } = useSelector((state: RootState) => state.user);
 
     const question = "What is the capital of France?"
 

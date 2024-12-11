@@ -2,8 +2,10 @@ import { Request, Response, Router } from "express";
 import { User } from "shared-types";
 import { langchainService } from "../../services/langchainService";
 import { Readable } from "stream";
+import Logger from "../../utils/logger";
 
 const router = Router();
+const logger = new Logger("graderRoutes");
 
 router.post("/grade",async  (req: Request<null, any, User, null>, res: Response) => {
 
@@ -26,15 +28,16 @@ router.post("/grade",async  (req: Request<null, any, User, null>, res: Response)
         stream.push(`data: ${JSON.stringify(data.agent.messages[0]?.kwargs?.content)}\n\n`);
       } catch (error) {
         console.error(error);
-        
+        logger.warn("Error in langchainStream");
       }
     }
 
     stream.push(null);
   } catch (error) {
-    console.error(error);
+    logger.error(error as string);
     stream.push(`data: ${JSON.stringify({ error })}\n\n`);
     stream.push(null);
+
   }
 
 

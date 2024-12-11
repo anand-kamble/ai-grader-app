@@ -23,6 +23,13 @@ export enum UserError {
 }
 
 
-export interface UserLogin {
-    
+export interface UserLoginResponseSuccess {
+    message: string,
+    user: User
 }
+
+export interface UserLoginResponseError {
+    error: UserError
+}
+
+export type UserLoginResponse = UserLoginResponseSuccess | UserLoginResponseError
